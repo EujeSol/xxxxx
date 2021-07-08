@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-success btn-lg "
+        (click)="linkToAdd()">Добавить заметку</button>
+    </div>
+</div>
+
+<div class="card-grid">
+    <div *ngFor="let item of purchasesFree" >
+        <!-- <div *ngIf=" noteTypes != undefined;"> -->
+           <app-purchase-card class="item"
+           [purchase]="item"
+           (changeStatus)="changePurchaseStatus($event)"
+          (delete)="deletePurchase($event)">
+        </app-purchase-card>
+           <!-- </div> -->
+    </div>
+</div>
+
+<div class="card-grid">
+    <div *ngFor="let item of purchasesNotFree" >
+        <!-- <div *ngIf=" noteTypes != undefined;"> -->
+           <app-purchase-card class="item"
+           [purchase]="item"
+           (changeStatus)="changePurchaseStatus($event)"
+          (delete)="deletePurchase($event)">
+        </app-purchase-card>
+           <!-- </div> -->
+    </div>
+</div>
